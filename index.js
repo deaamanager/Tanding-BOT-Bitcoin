@@ -1,13 +1,19 @@
+// Create config .env file
 require("dotenv").config();
-const axios = require("axios");
-const ccxt = require("ccxt");
+
+// axios to fetch htpp req
 const axios = require("axios");
 
+// ccxt to connect Api with #binance
+const ccxt = require("ccxt");
+
+// config #binance with Api
 const binanceClient = new ccxt.binance({
   apiKey: process.env.API_ENV,
   secret: process.env.API_SECRET,
 });
 
+// loig function
 const tick = async () => {
   const { asset, base, secret, allocation } = config;
   const market = `${asset}/${base}`;
@@ -40,6 +46,7 @@ const tick = async () => {
    `);
 };
 
+// run function to work on biticoin
 const run = () => {
   const config = {
     asset: "BTC",
